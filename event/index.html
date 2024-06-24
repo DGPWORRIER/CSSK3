@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CSSK Events </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!--LIbrary for symbol-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-10 col-lg-4">
+                        <h1 class="site-branding flex">
+                            <a href="#">CSSK Events</a>
+                        </h1>
+                    </div>
+
+                    <div class="col-2 col-lg-8">
+                        <nav class="site-navigation">
+                            <div class="hamburger-menu d-lg-none">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div><!-- .hamburger-menu -->
+
+                            <ul>
+                                <li><a href="#">HOME</a></li>
+                                <li><a href="../index.html">Rental</a></li>
+                                <li><a href="../infra/infra.html">Infrastructure</a></li>
+                                <li><a href="../garage/garage.html">Garage</a></li>
+                                <li><a href="./index.html">Event</a></li>
+                            </ul><!-- flex -->
+                        </nav><!-- .site-navigation -->
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- container-fluid -->
+        </div><!-- header-bar -->
+    </header><!-- .site-header -->
+
+    <div class="hero-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-lg-2 col-lg-10">
+                    
+                    <div class="entry-header">
+                        <h2><span id="typed-text"></span></h2>
+                    </div><!-- .entry-header -->
+            </div>                    
+        </div><!-- row -->
+        <div class="col-md-6">
+            <div class="contact-form">
+                <div id="success"></div>
+                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <select class="form-control" id="subject" required="required" data-validation-required-message="Please select a subject">
+                            <option value="">Select an event</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Birthday Party">Birthday Party</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Festival">Festival</option>
+                            <option value="Seminar">Seminar</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Other">Other (please specify)</option>
+                        </select>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div>
+                        <button class="btn btn-block" type="submit" id="sendMessageButton">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- .container -->
+    </div><!-- .hero-content -->
+
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="lineup-artists-headline">
+                        <div class="entry-title">
+                            <p>JUST THE BEST</p>
+                            <h2>Our best events</h2>
+                        </div><!-- entry-title -->
+
+                        <div class="lineup-artists">
+                            <div class="lineup-artists-wrap flex flex-wrap">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/bride.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <div class="lineup-artists-description">
+                                    <div class="lineup-artists-description-container">
+                                        <div class="entry-title">
+                                            Wedding Planners
+                                        </div><!-- entry-title -->
+
+                                        <div class="entry-content">
+                                            <p>We plan the various types of weddings wether it is destination wedding and simple wedding </p>
+                                        </div><!-- entry-content -->
+
+                                        <div class="box-link">
+                                            <a href=""><img src="images/box.jpg" alt=""  width="52px" height="52px"></a>
+                                        </div><!-- box-link -->
+                                    </div><!-- lineup-artists-description-container -->
+                                </div><!-- lineup-artists-description -->
+                            </div><!-- lineup-artists-wrap -->
+
+                            <div class="lineup-artists-wrap flex flex-wrap">
+                                <div class="lineup-artists-description">
+                                    <figure class="featured-image d-md-none">
+                                        <a href="#"> <img src="images/corporate.jpg" alt=""> </a>
+                                    </figure><!-- featured-image -->
+
+                                    <div class="lineup-artists-description-container">
+                                        <div class="entry-title">
+                                            Corporate Events
+                                        </div><!-- entry-title -->
+
+                                        <div class="entry-content">
+                                            <p>Quisque at erat eu libero consequat tempus. Quisque mole stie convallis tempus. Ut semper purus metus, a euismod sapien sodales ac. Duis viverra eleifend fermentum. </p>
+                                        </div><!-- entry-content -->
+
+                                        <div class="box-link">
+                                            <a href="#"><img src="images/box.jpg" alt=""  width="52px" height="52px"></a>
+                                        </div><!-- box-link -->
+                                    </div><!-- lineup-artists-description-container -->
+                                </div><!-- lineup-artists-description -->
+
+                                <figure class="featured-image d-none d-md-block">
+                                    <a href="#"> <img src="images/corporate.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- lineup-artists-wrap -->
+
+                            <div class="lineup-artists-wrap flex flex-wrap">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/houseparty.jpeg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <div class="lineup-artists-description">
+                                    <div class="lineup-artists-description-container">
+                                        <div class="entry-title">
+                                            Parties
+                                        </div><!-- entry-title -->
+
+                                        <div class="entry-content">
+                                            <p>Quisque at erat eu libero consequat tempus. Quisque mole stie convallis tempus. Ut semper purus metus, a euismod sapien sodales ac. Duis viverra eleifend fermentum. </p>
+                                        </div><!-- entry-content -->
+
+                                        <div class="box-link">
+                                            <a href="#"> <img src="images/box.jpg" alt=""  width="52px" height="52px"></a>
+                                        </div><!-- box-link -->
+                                    </div><!-- lineup-artists-description-container -->
+                                </div><!-- lineup-artists-description -->
+                            </div><!-- lineup-artists-wrap -->
+                        </div><!-- lineup-artists -->
+                    </div><!-- lineup-artists-headline -->
+                </div><!-- col-12 -->
+            </div><!-- row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="the-complete-lineup">
+                        <div class="entry-title">
+                            <p>JUST THE BEST</p>
+                            <h2>The Complete Lineup</h2>
+                        </div><!-- entry-title -->
+
+                        <div class="row the-complete-lineup-artists">
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/bride.jpg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Wedding</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/corporate.jpg " alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""  width="52px" height="52px"> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2> Corporate Events</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/houseparty.jpeg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt="" width="52px" height="52px"> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>
+                                    Parties
+                                </h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/bride.jpg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""  width="52px" height="52px"> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Event4</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/wedding.jpeg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""  width="52px" height="52px"> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Event5</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/wedding(1).jpg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Event6</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/wedding(2).jpg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Event7</h2>
+                            </div><!-- artist-single -->
+
+                            <div class="col-6 col-md-4 col-lg-3 artist-single">
+                                <figure class="featured-image">
+                                    <a href="#"> <img src="images/corporate.jpg" alt=""> </a>
+                                    <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a>
+                                </figure><!-- featured-image -->
+
+                                <h2>Event8</h2>
+                            </div><!-- artist-single -->
+                        </div><!-- the-complete-lineup-artists -->
+                    </div><!-- the-complete-lineup -->
+                </div><!-- col-12 -->
+            </div><!-- row -->
+        </div><!-- container -->
+
+        <div class="homepage-next-events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="entry-title">
+                            <p>JUST THE BEST</p>
+                            <h2>Our Organized Events</h2>
+                        </div><!-- entry-title -->
+                    </div><!-- col-12 -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+            <div class="next-event-slider-wrap">
+                <div class="swiper-container next-event-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-1.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-2.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-3.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-1.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-2.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+
+                        <div class="swiper-slide">
+                            <div class="next-event-content">
+                                <figure class="featured-image">
+                                    <img src="images/next-event-3.jpg" alt="">
+
+                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                        <h3>Welcoming Party 2018</h3>
+                                        <p>Green Palace, 22 Street, 23-28, Los Angeles California</p>
+                                    </a>
+                                </figure><!-- featured-image -->
+                            </div><!-- next-event-content -->
+                        </div><!-- swiper-slide" -->
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .swiper-container -->
+
+                <div class="swiper-button-next">
+                    <img src="images/button.png" alt="">
+                </div><!-- .slider-button -->
+            </div><!-- .next-event-slider-wrap -->
+        </div><!-- homepage-next-events -->
+
+        </div>
+
+   <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">   
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>CSSK<span>.</span></h3>
+              <p>
+                G. No. 18/19, Plot No. 9,10, near Global Vision School <br>
+                Ambadnya, Maharashtra 422010<br><br>
+                <strong>Phone:</strong> +91 7447221414<br>
+                <button class="call-button" onclick="window.location.href='tel:7447221414'"><i class="fas fa-phone"></i></button>
+                
+                <a href="https://api.whatsapp.com/send?phone=917447221414&text=Hi I need more information" class="whatsapp-button" title="Send us a WhatsApp message" target="_blank">
+                  <img src="images/whatsapp.png" height="1000px" width="1000px">
+                </a>
+                
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#container">CAR BOOKING</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="./event1.html">EVENT Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="">Garage</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-links">
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Cssk</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">DGP</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countdown.min.js'></script>
+    <script type='text/javascript' src='js/circle-progress.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+    <script type='text/javascript' src='js/type.js'></script>
+
+</body>
+</html>

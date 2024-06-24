@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Villa Listings</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media screen and (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+    .villa-card {
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(14, 0, 0);
+      overflow: hidden;
+      background-color: rgb(255 253 253 / 77%);
+
+    }
+
+    
+    .villa-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .villa-details {
+      padding: 15px;
+    }
+
+
+
+    .view-more {
+      background-color: #f8ec07;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .view-more:hover {
+    background-color: #4CAF50; /* Background color on hover */
+    color: #000000; /* Text color on hover */
+}
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 700px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      right: 25px;
+      color: #ff0000;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .slider {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('img/bedroom.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .form-container {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin-top: 70px; /* Adjust margin-top to accommodate navbar */
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #d32f2f;
+        }
+
+        .form-container label {
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"],
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container select {
+            height: 40px;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-container .btn-container {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .form-container button {
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: #b71c1c;
+        }
+
+        .form-container button[type="reset"] {
+            background-color: #ccc;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        .form-container button[type="reset"]:hover {
+            background-color: #999;
+        }
+  </style>
+</head>
+<body>
+    <!-- Booking Form -->
+    <div class="form-container">
+        <h2>Booking For Stay</h2>
+          <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="\+91[0-9]{10}" maxlength="10" placeholder="+91 Your Phone No." required>
+        
+            <label for="property">Select Property:</label>
+            <select id="property" name="property" required>
+                <option value="">Select</option>
+                <option value="villa">Villa</option>
+                <option value="guest_house">Guest House</option>
+                <option value="flat">Flat</option>
+            </select>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" minlength="10" title="Description should be at least 10 characters long" placeholder="Any Special Request"></textarea>
+        
+            <div class="btn-container">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    
+  <div class="container">
+    <div class="villa-card" data-images='["img/bedroom.jpg", "img/villa.jpg", "img/bedroom1.png"]'>
+      <img src="img/bedroom.jpg" alt="Villa 1" class="villa-image">
+      <div class="villa-details">
+        <h3>Villa Name 1</h3>
+        <p>Address: 1234 Example Street, City, Country</p>
+        <p>Description: A brief description of the villa or guest house.</p>
+        <button class="view-more">View More</button>
+      </div>
+    </div>
+
+    <div class="villa-card" data-images='["img/blog-1.jpg", "img/blog-2.jpg", "img/blog-3.jpg"]'>
+      <img src="img/blog-1.jpg" alt="Villa 2" class="villa-image">
+      <div class="villa-details">
+        <h3>Villa Name 2</h3>
+        <p>Address: 5678 Example Street, City, Country</p>
+        <p>Description: A brief description of the villa or guest house.</p>
+        <button class="view-more">View More</button>
+      </div>
+    </div>
+    <div class="villa-card" data-images='["img/blog-1.jpg", "img/blog-2.jpg", "img/blog-3.jpg"]'>
+        <img src="img/blog-1.jpg" alt="Villa 2" class="villa-image">
+        <div class="villa-details">
+          <h3>Villa Name 2</h3>
+          <p>Address: 5678 Example Street, City, Country</p>
+          <p>Description: A brief description of the villa or guest house.</p>
+          <button class="view-more">View More</button>
+        </div>
+      </div>
+
+      <div class="villa-card" data-images='["img/blog-1.jpg", "img/blog-2.jpg", "img/blog-3.jpg"]'>
+        <img src="img/blog-1.jpg" alt="Villa 2" class="villa-image">
+        <div class="villa-details">
+          <h3>Villa Name 2</h3>
+          <p>Address: 5678 Example Street, City, Country</p>
+          <p>Description: A brief description of the villa or guest house.</p>
+          <button class="view-more">View More</button>
+        </div>
+      </div>
+
+      <div class="villa-card" data-images='["img/blog-1.jpg", "img/blog-2.jpg", "img/blog-3.jpg"]'>
+        <img src="img/blog-1.jpg" alt="Villa 2" class="villa-image">
+        <div class="villa-details">
+          <h3>Villa Name 2</h3>
+          <p>Address: 5678 Example Street, City, Country</p>
+          <p>Description: A brief description of the villa or guest house.</p>
+          <button class="view-more">View More</button>
+        </div>
+      </div>
+
+      <div class="villa-card" data-images='["img/blog-1.jpg", "img/blog-2.jpg", "img/blog-3.jpg"]'>
+        <img src="img/blog-1.jpg" alt="Villa 2" class="villa-image">
+        <div class="villa-details">
+          <h3>Villa Name 2</h3>
+          <p>Address: 5678 Example Street, City, Country</p>
+          <p>Description: A brief description of the villa or guest house.</p>
+          <button class="view-more">View More</button>
+        </div>
+      </div>
+    <!-- Repeat for other villas -->
+  </div>
+
+  <!-- Modal -->
+  <div id="villaModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="slider" id="slider">
+        <button class="slider-button prev" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="slider-inner" id="sliderInner">
+          <!-- Images will be inserted here -->
+        </div>
+        <button class="slider-button next" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const viewMoreButtons = document.querySelectorAll('.view-more');
+    const modal = document.getElementById('villaModal');
+    const sliderInner = document.getElementById('sliderInner');
+    const closeModal = document.querySelector('.close');
+
+    let currentSlide = 0;
+
+    viewMoreButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const villaCard = button.closest('.villa-card');
+        const villaName = villaCard.querySelector('h3').textContent;
+        const imagePaths = JSON.parse(villaCard.dataset.images);
+
+        // Clear the slider inner content
+        sliderInner.innerHTML = '';
+
+        // Add images to the slider
+        imagePaths.forEach(path => {
+          const img = document.createElement('img');
+          img.src = path;
+          sliderInner.appendChild(img);
+        });
+
+        // Show the modal
+        modal.style.display = 'block';
+
+        // Initialize the slider
+        showSlide(currentSlide = 0);
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.onclick = event => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+    function changeSlide(n) {
+      showSlide(currentSlide += n);
+    }
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('#sliderInner img');
+      if (n >= slides.length) { currentSlide = 0 }
+      if (n < 0) { currentSlide = slides.length - 1 }
+      slides.forEach((slide, index) => {
+        slide.style.display = index === currentSlide ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

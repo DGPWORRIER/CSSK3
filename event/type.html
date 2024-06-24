@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        #typed-text {
+            border-right: .1em solid #000;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: caret 0.75s step-end infinite;
+        }
+
+        @keyframes caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="entry-header">
+        <h2><span id="typed-text"></span></h2>
+    </div><!-- .entry-header -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const text = "Your Event, Our Passion";
+            let index = 0;
+            const speed = 100; // Adjust typing speed here (milliseconds)
+
+            function type() {
+                if (index < text.length) {
+                    document.getElementById("typed-text").textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        });
+    </script>
+</body>
+</html>
