@@ -585,7 +585,7 @@ h6 {
             margin-left: 100px; 
 }
 
-@media (max-width: 414px) {
+@media (max-width: 360px) {
   #rentalform{
     margin-right: 150px;
   }
